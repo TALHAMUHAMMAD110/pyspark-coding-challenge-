@@ -1,9 +1,6 @@
 import pyspark.sql.functions as F
 from pyspark.sql.window import Window
-from pyspark.sql.types import (
-    StructType, StructField, StringType,
-    IntegerType, ArrayType, BooleanType
-)
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType, BooleanType
 
 # =========================
 # Schema Definitions
