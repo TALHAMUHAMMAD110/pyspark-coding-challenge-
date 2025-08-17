@@ -121,11 +121,10 @@ def create_training_inputs(impressions_df, clicks_df, add_to_carts_df, previous_
     # Step 5: Join back with impressions
     # =========================
     final_df = exploded_impressions_df.join(
-        customer_actions_df,
+        F.broadcast(customer_actions_df),
         on=["customer_id", "impression_date"],
         how="left"
     )
-
     # =========================
     # Step 6: Pad to length 1000
     # =========================
