@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 import pyspark.sql.functions as F
-from pyspark_challenge.pipeline import create_training_inputs,impressions_schema, clicks_schema, add_to_carts_schema, previous_orders_schema
+from pyspark_pipeline.pipeline import create_training_inputs,impressions_schema, clicks_schema, add_to_carts_schema, previous_orders_schema
 
 
 if __name__ == "__main__":

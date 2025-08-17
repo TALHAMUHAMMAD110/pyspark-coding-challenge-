@@ -3,11 +3,9 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, IntegerType, ArrayType
 
 
-from pyspark_challenge.pipeline import create_training_inputs, impressions_schema, clicks_schema, add_to_carts_schema, previous_orders_schema
+from pyspark_pipeline.pipeline import create_training_inputs, impressions_schema, clicks_schema, add_to_carts_schema, previous_orders_schema
 
 # Define a pytest fixture to create a SparkSession
-# A fixture ensures the SparkSession is created once for the test session
-# and then stopped gracefully.
 @pytest.fixture(scope="session")
 def spark_session():
     """
