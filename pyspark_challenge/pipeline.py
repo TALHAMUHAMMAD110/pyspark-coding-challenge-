@@ -92,9 +92,7 @@ def create_training_inputs(impressions_df, clicks_df, add_to_carts_df, previous_
         .withColumn("impression_date", F.to_date("dt"))
 
     # =========================
-    # Step 3: Filter valid actions
-    # - only before impression_date
-    # - within 1 year lookback
+    # Step 3: Filter valid actions only before impression_date within 1 year lookback
     # =========================
     valid_actions_df = all_actions_df.join(
         exploded_impressions_df.select("customer_id", "impression_date").distinct(),
