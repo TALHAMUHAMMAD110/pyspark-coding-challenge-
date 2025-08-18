@@ -35,6 +35,8 @@ The output dataset is structured to be consumed directly by a PyTorch model, wit
 
 6. **Final Output**  
    A Spark DataFrame with columns:
+   - `impression_date`
+   - `ranking_id`
    - `impressions`
    - `actions`
    - `action_types`
