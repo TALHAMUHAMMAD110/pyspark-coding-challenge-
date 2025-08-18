@@ -55,6 +55,8 @@ def create_training_inputs(impressions_df, clicks_df, add_to_carts_df, previous_
     Returns:
         A Spark DataFrame with the final training inputs.
         The DataFrame will have these columns:
+        - impresion_date
+        - ranking_id
         - impressions (int)
         - actions (array<int>, length=1000, padded with 0)
         - action_types (array<int>, length=1000, padded with 0)
@@ -158,6 +160,8 @@ def create_training_inputs(impressions_df, clicks_df, add_to_carts_df, previous_
     
     # Select the final columns as specified by the document, including `is_order`
     training_data = final_df.select(
+        F.col("impression_date"),
+        F.col("ranking_id"),
         F.col("impression_item_id").alias("impressions"),
         padded_actions.alias("actions"),
         padded_action_types.alias("action_types"),

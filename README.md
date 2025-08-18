@@ -7,6 +7,8 @@ The input data includes:
 - Customer actions (clicks, add-to-carts, and previous orders)
 
 The output dataset is structured to be consumed directly by a PyTorch model, with the following tensors:
+- **impression_date**: The date of the impression event. This is crucial for filtering data by day (e.g., for daily model training or evaluation).
+- **ranking_id**: A unique identifier for the specific impression event. This allows the data to be traced back to the original source data for debugging or further analysis.
 - **impressions**: `[batch_size]`
 - **actions**: `[batch_size, 1000]` (padded with 0s if fewer than 1000 actions)
 - **action_types**: `[batch_size, 1000]` (1=click, 2=cart, 3=order, 0=missing)
